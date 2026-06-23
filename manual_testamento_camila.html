@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Peças — Direito das Sucessões</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+[data-theme="light"]{
+  --bg:#F7F8FC;--bg2:#FFFFFF;--bg3:#EEF1F8;--bg4:#E4E9F4;
+  --t1:#0D1B2A;--t2:#2E4057;--t3:#64748B;
+  --border:#DDE3EE;
+  --azul:#1A3A6B;--azul2:#2563EB;--azulc:#EFF6FF;--azulc2:#DBEAFE;
+  --verde:#14532D;--verde2:#16A34A;--verdec:#F0FDF4;
+  --laranja:#92400E;--laranja2:#D97706;--larc:#FFFBEB;
+  --roxo:#4C1D95;--roxo2:#7C3AED;--roxoc:#F5F3FF;
+  --verm:#7F1D1D;--verm2:#DC2626;--vermc:#FEF2F2;
+  --rosa:#831843;--rosa2:#DB2777;--rosac:#FDF2F8;
+  --teal:#134E4A;--teal2:#0D9488;--tealc:#F0FDFA;
+  --amber:#78350F;--amber2:#B45309;--amberc:#FFFBEB;
+  --shadow:0 4px 20px rgba(13,27,42,.08);--shadow2:0 1px 4px rgba(13,27,42,.05);
+  --sb-bg:#0D1B2A;--sb-tx:rgba(255,255,255,.72);
+  --topbar:#FFFFFF;
+}
+[data-theme="dark"]{
+  --bg:#07101E;--bg2:#0F1C2E;--bg3:#162136;--bg4:#1C2A40;
+  --t1:#E8F0FE;--t2:#B8CCE4;--t3:#7A9AB8;
+  --border:#1E2F45;
+  --azul:#93C5FD;--azul2:#60A5FA;--azulc:#0C1F3D;--azulc2:#132540;
+  --verde:#6EE7B7;--verde2:#34D399;--verdec:#022C22;
+  --laranja:#FCD34D;--laranja2:#FBBF24;--larc:#1C1400;
+  --roxo:#C4B5FD;--roxo2:#A78BFA;--roxoc:#1E1B4B;
+  --verm:#FCA5A5;--verm2:#F87171;--vermc:#3B0808;
+  --rosa:#F9A8D4;--rosa2:#F472B6;--rosac:#3B0A1F;
+  --teal:#5EEAD4;--teal2:#2DD4BF;--tealc:#042F2E;
+  --amber:#FDE68A;--amber2:#FCD34D;--amberc:#1C1000;
+  --shadow:0 4px 20px rgba(0,0,0,.4);--shadow2:0 1px 4px rgba(0,0,0,.3);
+  --sb-bg:#050E1A;--sb-tx:rgba(255,255,255,.62);
+  --topbar:#0F1C2E;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;transition:background .3s,color .3s;font-size:15px}
+
+/* LAYOUT */
+.shell{display:grid;grid-template-columns:268px 1fr;min-height:100vh}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.sidebar{display:none!important}}
+
+/* SIDEBAR */
+.sidebar{background:var(--sb-bg);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.08) transparent}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+.sb-brand{padding:22px 18px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-brand .ico{font-size:1.7rem;display:block;margin-bottom:6px}
+.sb-brand h1{font-family:'Lora',serif;font-size:1rem;color:#fff;font-weight:700;line-height:1.3}
+.sb-brand p{font-size:.68rem;color:rgba(255,255,255,.38);margin-top:2px;font-family:'JetBrains Mono',monospace}
+.sb-nav{padding:12px 0 16px;flex:1}
+.sb-label{font-size:.6rem;font-weight:700;letter-spacing:.13em;color:rgba(255,255,255,.28);text-transform:uppercase;padding:8px 18px 3px}
+.sb-a{display:flex;align-items:flex-start;gap:8px;padding:6px 18px;font-size:.77rem;color:var(--sb-tx);text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:all .14s;line-height:1.4}
+.sb-a:hover,.sb-a.on{background:rgba(255,255,255,.06);color:#fff;border-left-color:#F59E0B}
+.sb-a .ic{font-size:.85rem;min-width:16px;margin-top:1px;flex-shrink:0}
+.sb-footer{padding:12px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:.67rem;color:rgba(255,255,255,.28);text-align:center}
+.sb-footer strong{color:rgba(255,255,255,.45)}
+
+/* TOPBAR */
+.topbar{background:var(--topbar);border-bottom:1px solid var(--border);padding:11px 32px;position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow2);transition:background .3s}
+.tb-left{font-size:.78rem;color:var(--t3)}
+.tb-left strong{color:var(--azul2)}
+.tb-right{display:flex;align-items:center;gap:10px}
+.btn-theme{background:var(--bg3);border:1px solid var(--border);color:var(--t2);font-size:.78rem;padding:5px 13px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .18s;font-family:'Inter',sans-serif;white-space:nowrap}
+.btn-theme:hover{background:var(--azulc);color:var(--azul2);border-color:var(--azul2)}
+.pgwrap{width:110px;height:3px;background:var(--border);border-radius:3px;overflow:hidden}
+.pgbar{height:100%;background:linear-gradient(90deg,var(--azul2),var(--roxo2));border-radius:3px;transition:width .3s}
+
+/* CONTEUDO */
+.main{overflow:hidden;min-width:0}
+.content{padding:28px 32px 80px;max-width:880px}
+@media(max-width:700px){.content{padding:18px 14px 60px}.topbar{padding:10px 14px}}
+
+/* MODAL */
+.wov{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:200;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.wbox{background:var(--bg2);border-radius:18px;padding:38px 44px;max-width:480px;width:92%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.3);animation:pop .38s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+.wbox .wico{font-size:3rem;margin-bottom:12px;display:block}
+.wbox h2{font-family:'Lora',serif;font-size:1.55rem;color:var(--t1);margin-bottom:8px}
+.wbox p{color:var(--t3);font-size:.88rem;line-height:1.65;margin-bottom:10px}
+.wbox .waluno{color:var(--azul2);font-weight:700;font-size:.95rem;margin:10px 0}
+.wbox .wluck{font-size:1.1rem;margin:12px 0 18px}
+.wbtn{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;border:none;padding:12px 32px;border-radius:28px;font-size:.9rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .18s,box-shadow .18s;box-shadow:0 6px 20px rgba(37,99,235,.3)}
+.wbtn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,99,235,.4)}
+.wcred{font-size:.7rem;color:var(--t3);margin-top:14px}
+.wcred strong{color:var(--azul2)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0D1B2A 0%,#1A3A6B 55%,#1E40AF 100%);border-radius:16px;padding:40px 40px 32px;color:#fff;margin-bottom:36px;position:relative;overflow:hidden}
+.hero::before{content:'⚖';position:absolute;right:-10px;top:-20px;font-size:170px;opacity:.05;line-height:1;pointer-events:none;font-family:serif}
+.hero .htag{display:inline-block;background:rgba(255,255,255,.13);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:18px;margin-bottom:14px;font-family:'JetBrains Mono',monospace}
+.hero h1{font-family:'Lora',serif;font-size:2.1rem;font-weight:700;line-height:1.18;margin-bottom:8px}
+.hero p{color:rgba(255,255,255,.78);font-size:.88rem;max-width:480px;line-height:1.65}
+.hero .hchips{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+.hchip{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);font-size:.7rem;padding:4px 11px;border-radius:7px;font-weight:500}
+.hcred{margin-top:18px;font-size:.72rem;color:rgba(255,255,255,.38);border-top:1px solid rgba(255,255,255,.1);padding-top:12px}
+.hcred strong{color:rgba(255,255,255,.6)}
+
+/* ÍNDICE */
+.indice{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;box-shadow:var(--shadow2)}
+.indice h2{font-family:'Lora',serif;font-size:1.1rem;color:var(--t1);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+@media(max-width:600px){.ind-grid{grid-template-columns:1fr}}
+.ind-item{display:flex;align-items:flex-start;gap:9px;padding:9px 12px;border-radius:9px;background:var(--bg3);cursor:pointer;transition:background .14s;text-decoration:none}
+.ind-item:hover{background:var(--azulc)}
+.ind-num{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;color:var(--azul2);min-width:20px;margin-top:1px}
+.ind-txt{font-size:.8rem;color:var(--t2);font-weight:500;line-height:1.35}
+
+/* AÇÃO CARD */
+.acao{background:var(--bg2);border:1px solid var(--border);border-radius:16px;margin-bottom:32px;box-shadow:var(--shadow);overflow:hidden}
+.acao-header{padding:22px 28px 18px;color:#fff;position:relative;overflow:hidden}
+.acao-header::after{content:'';position:absolute;right:-24px;bottom:-24px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.06);pointer-events:none}
+.acao-tipo{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;opacity:.72;margin-bottom:5px}
+.acao-header h2{font-family:'Lora',serif;font-size:1.45rem;font-weight:700;line-height:1.2}
+.acao-header p{opacity:.8;font-size:.82rem;margin-top:5px;max-width:480px}
+.acao-body{padding:22px 28px}
+
+/* CORES DOS HEADERS */
+.h-azul{background:linear-gradient(135deg,#0D1B2A,#1E40AF)}
+.h-verde{background:linear-gradient(135deg,#052E16,#16A34A)}
+.h-roxo{background:linear-gradient(135deg,#2E1065,#7C3AED)}
+.h-laranja{background:linear-gradient(135deg,#431407,#EA580C)}
+.h-verm{background:linear-gradient(135deg,#450A0A,#DC2626)}
+.h-rosa{background:linear-gradient(135deg,#500724,#DB2777)}
+.h-teal{background:linear-gradient(135deg,#042F2E,#0D9488)}
+.h-slate{background:linear-gradient(135deg,#0F172A,#475569)}
+.h-amber{background:linear-gradient(135deg,#1C1400,#D97706)}
+.h-indigo{background:linear-gradient(135deg,#1E1B4B,#4338CA)}
+
+/* META-INFO */
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:20px}
+.meta-card{background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:11px 14px}
+.meta-label{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin-bottom:4px}
+.meta-val{font-size:.82rem;color:var(--t1);font-weight:500;line-height:1.4}
+.meta-val.destaque{color:var(--azul2);font-weight:600}
+.meta-val.alerta{color:var(--verm2);font-weight:600}
+
+/* PASSO A PASSO */
+.steps-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--t3);margin:18px 0 12px;display:flex;align-items:center;gap:6px}
+.steps{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.step{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;user-select:none}
+.step:hover{background:var(--azulc);border-color:var(--azul2)}
+.step.done{background:var(--verdec);border-color:var(--verde2)}
+.step.done .step-num{background:var(--verde2);color:#fff}
+.step.done .step-txt{color:var(--verde);text-decoration:line-through;opacity:.8}
+.step-num{min-width:26px;height:26px;border-radius:50%;background:var(--azulc2);color:var(--azul2);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'JetBrains Mono',monospace;transition:all .15s}
+.step-txt{font-size:.87rem;color:var(--t2);line-height:1.55;transition:all .15s}
+.step-txt strong{color:var(--t1);font-weight:600}
+.step-txt em{color:var(--azul2);font-style:normal;font-weight:500}
+
+/* DOCS */
+.docs-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+@media(max-width:560px){.docs-grid{grid-template-columns:1fr}}
+.doc-item{display:flex;align-items:flex-start;gap:8px;padding:8px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;font-size:.81rem;color:var(--t2)}
+.doc-item .di{font-size:.85rem;flex-shrink:0;margin-top:1px}
+
+/* BOXES */
+.box{border-radius:9px;padding:14px 18px;margin:12px 0;font-size:.85rem}
+.bx-t{font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.bx-az{background:var(--azulc);border-left:4px solid var(--azul2)}.bx-az .bx-t{color:var(--azul)}
+.bx-vd{background:var(--verdec);border-left:4px solid var(--verde2)}.bx-vd .bx-t{color:var(--verde)}
+.bx-or{background:var(--larc);border-left:4px solid var(--laranja2)}.bx-or .bx-t{color:var(--laranja)}
+.bx-rm{background:var(--vermc);border-left:4px solid var(--verm2)}.bx-rm .bx-t{color:var(--verm)}
+.bx-rx{background:var(--roxoc);border-left:4px solid var(--roxo2)}.bx-rx .bx-t{color:var(--roxo)}
+.bx-tl{background:var(--tealc);border-left:4px solid var(--teal2)}.bx-tl .bx-t{color:var(--teal)}
+.bx-am{background:var(--amberc);border-left:4px solid var(--amber2)}.bx-am .bx-t{color:var(--amber)}
+.box p,.box li{color:var(--t2);line-height:1.6}
+.box ul{padding-left:16px;margin-top:5px}
+.box li{margin-bottom:3px}
+
+/* LEGBASE */
+.legbase{display:inline-flex;align-items:center;gap:5px;background:var(--azulc);border:1px solid var(--azulc2);color:var(--azul2);font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:6px;margin:2px 3px 2px 0;font-family:'JetBrains Mono',monospace}
+
+/* SEÇÃO */
+.sec{font-family:'Lora',serif;font-size:1.05rem;color:var(--t1);margin:24px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border)}
+.txt{color:var(--t2);margin-bottom:12px;font-size:.91rem;line-height:1.72}
+.txt strong{color:var(--t1)}
+
+/* SEP */
+.sep{height:1px;background:var(--border);margin:32px 0}
+
+/* SCROLL TOP */
+.scrtop{position:fixed;bottom:22px;right:22px;background:var(--azul2);color:#fff;border:none;width:40px;height:40px;border-radius:50%;font-size:.95rem;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.35);z-index:90;display:flex;align-items:center;justify-content:center;transition:all .18s}
+.scrtop:hover{background:var(--azul);transform:translateY(-2px)}
+
+/* BADGE */
+.bdg{display:inline-flex;align-items:center;gap:3px;font-size:.66rem;font-weight:700;padding:2px 8px;border-radius:5px;vertical-align:middle;margin-left:5px}
+.bdg-p{background:var(--vermc);color:var(--verm2)}
+.bdg-a{background:var(--amberc);color:var(--amber2)}
+.bdg-i{background:var(--azulc);color:var(--azul2)}
+
+/* PROGRESSO CARD */
+.prog-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px}
+.prog-label{font-size:.78rem;color:var(--t3);white-space:nowrap}
+.prog-bar-ext{flex:1;height:6px;background:var(--border);border-radius:6px;overflow:hidden}
+.prog-bar-int{height:100%;background:linear-gradient(90deg,var(--verde2),var(--azul2));border-radius:6px;transition:width .4s}
+.prog-count{font-size:.78rem;font-weight:700;color:var(--azul2);white-space:nowrap;font-family:'JetBrains Mono',monospace}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.acao{animation:fadeUp .35s ease both}
+</style>
+</head>
+<body>
+
+<!-- MODAL BOAS-VINDAS -->
+<div class="wov" id="welcome">
+  <div class="wbox">
+    <span class="wico">⚖️</span>
+    <h2>Bem-vinda, Camila!</h2>
+    <p>Este é o seu <strong>Manual Completo de Peças Processuais</strong> em Direito das Sucessões — especialmente organizado para o trabalho da disciplina.</p>
+    <p class="waluno">📚 Direito Sucessório · Sucessão Testamentária</p>
+    <p style="font-size:.82rem;color:var(--t3)">Aqui você encontra todas as ações testamentárias com passo a passo detalhado, base legal e documentos necessários.</p>
+    <div class="wluck">🍀 Boa sorte no trabalho! Você vai arrasar! ✨</div>
+    <button class="wbtn" onclick="document.getElementById('welcome').style.display='none'">Acessar o Manual →</button>
+    <div class="wcred">Criado por <strong>Andrews Curriel</strong> · Material Premium de Direito das Sucessões</div>
+  </div>
+</div>
+
+<div class="shell">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-brand">
+    <span class="ico">⚖️</span>
+    <h1>Manual de Peças Testamentárias</h1>
+    <p>Andrews Curriel · Direito Sucessório</p>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-label">Abertura de Testamento</div>
+    <a class="sb-a" onclick="ir('a1')"><span class="ic">📄</span>Testamento Público</a>
+    <a class="sb-a" onclick="ir('a2')"><span class="ic">🔒</span>Testamento Cerrado</a>
+    <a class="sb-a" onclick="ir('a3')"><span class="ic">✍️</span>Testamento Particular</a>
+    <a class="sb-a" onclick="ir('a4')"><span class="ic">🚨</span>Testamento Especial</a>
+    <div class="sb-label">Ações de Impugnação</div>
+    <a class="sb-a" onclick="ir('a5')"><span class="ic">❌</span>Nulidade de Testamento</a>
+    <a class="sb-a" onclick="ir('a6')"><span class="ic">⚠️</span>Anulação de Testamento</a>
+    <div class="sb-label">Ações Patrimoniais</div>
+    <a class="sb-a" onclick="ir('a7')"><span class="ic">✂️</span>Redução de Disposições</a>
+    <a class="sb-a" onclick="ir('a8')"><span class="ic">🚫</span>Exclusão por Indignidade</a>
+    <a class="sb-a" onclick="ir('a9')"><span class="ic">💰</span>Petição de Herança</a>
+    <div class="sb-label">Inventário</div>
+    <a class="sb-a" onclick="ir('a10')"><span class="ic">🏛️</span>Inventário Judicial</a>
+    <a class="sb-a" onclick="ir('a11')"><span class="ic">📋</span>Inventário Extrajudicial</a>
+    <div class="sb-label">Complementar</div>
+    <a class="sb-a" onclick="ir('a12')"><span class="ic">📝</span>Codicilo</a>
+    <a class="sb-a" onclick="ir('resumo')"><span class="ic">⚡</span>Quadro Resumo</a>
+  </nav>
+  <div class="sb-footer">Criado por <strong>Andrews Curriel</strong><br>Direito das Sucessões · 2025</div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="topbar">
+    <div class="tb-left">⚖️ <strong>Manual de Peças Processuais</strong> · Sucessão Testamentária</div>
+    <div class="tb-right">
+      <div class="pgwrap" title="Progresso"><div class="pgbar" id="pgbar" style="width:0%"></div></div>
+      <button class="btn-theme" onclick="toggleTheme()" id="btnT">🌙 Noite</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+  <!-- HERO -->
+  <div class="hero" id="topo">
+    <div class="htag">Trabalho Acadêmico · Direito das Sucessões</div>
+    <h1>Manual de Peças Processuais Testamentárias</h1>
+    <p>Guia prático com passo a passo de todas as ações envolvendo testamento no Direito brasileiro — do CC/2002 e CPC/2015.</p>
+    <div class="hchips">
+      <span class="hchip">📄 11 Ações</span>
+      <span class="hchip">⚖️ CC/2002</span>
+      <span class="hchip">📋 CPC/2015</span>
+      <span class="hchip">✅ Passo a Passo</span>
+      <span class="hchip">📂 Documentos</span>
+    </div>
+    <div class="hcred">Material criado por <strong>Andrews Curriel</strong> · baseado nas aulas da Prof.ª Dr.ª Denise Schmitt Siqueira Garcia</div>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <h2>📋 Índice de Ações</h2>
+    <div class="ind-grid">
+      <a class="ind-item" onclick="ir('a1')"><span class="ind-num">01</span><span class="ind-txt">Abertura de Testamento Público</span></a>
+      <a class="ind-item" onclick="ir('a2')"><span class="ind-num">02</span><span class="ind-txt">Abertura de Testamento Cerrado</span></a>
+      <a class="ind-item" onclick="ir('a3')"><span class="ind-num">03</span><span class="ind-txt">Abertura de Testamento Particular</span></a>
+      <a class="ind-item" onclick="ir('a4')"><span class="ind-num">04</span><span class="ind-txt">Abertura de Testamento Especial</span></a>
+      <a class="ind-item" onclick="ir('a5')"><span class="ind-num">05</span><span class="ind-txt">Ação de Nulidade de Testamento</span></a>
+      <a class="ind-item" onclick="ir('a6')"><span class="ind-num">06</span><span class="ind-txt">Ação de Anulação de Testamento</span></a>
+      <a class="ind-item" onclick="ir('a7')"><span class="ind-num">07</span><span class="ind-txt">Ação de Redução de Disposições</span></a>
+      <a class="ind-item" onclick="ir('a8')"><span class="ind-num">08</span><span class="ind-txt">Ação de Exclusão por Indignidade</span></a>
+      <a class="ind-item" onclick="ir('a9')"><span class="ind-num">09</span><span class="ind-txt">Ação de Petição de Herança</span></a>
+      <a class="ind-item" onclick="ir('a10')"><span class="ind-num">10</span><span class="ind-txt">Inventário Testamentário Judicial</span></a>
+      <a class="ind-item" onclick="ir('a11')"><span class="ind-num">11</span><span class="ind-txt">Inventário Testamentário Extrajudicial</span></a>
+      <a class="ind-item" onclick="ir('a12')"><span class="ind-num">12</span><span class="ind-txt">Procedimento do Codicilo</span></a>
+    </div>
+  </div>
+
+  <!-- PROGRESSO CHECKLIST -->
+  <div class="prog-wrap">
+    <span class="prog-label">✅ Etapas concluídas:</span>
+    <div class="prog-bar-ext"><div class="prog-bar-int" id="prog-int" style="width:0%"></div></div>
+    <span class="prog-count" id="prog-count">0 / 0</span>
+  </div>
+  <p style="font-size:.75rem;color:var(--t3);margin-bottom:24px">💡 Clique nas etapas do passo a passo para marcá-las como concluídas e acompanhar seu progresso.</p>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 01 — TESTAMENTO PÚBLICO
+═══════════════════════════════════════════ -->
+<div class="acao" id="a1">
+  <div class="acao-header h-azul">
+    <div class="acao-tipo">Ação 01 · Procedimento Especial de Jurisdição Voluntária</div>
+    <h2>📄 Abertura e Cumprimento de Testamento Público</h2>
+    <p>Procedimento para registrar, publicar e dar cumprimento ao testamento lavrado em cartório.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1864-1867 CC · Art. 735 CPC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Jurisdição voluntária (procedimento especial)</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Juízo do inventário (foro do último domicílio do falecido)</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Qualquer interessado, MP ou o próprio tabelião</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo p/ inventário</div><div class="meta-val alerta">60 dias da abertura da sucessão (art. 611 CPC)</div></div>
+      <div class="meta-card"><div class="meta-label">✅ Vantagem</div><div class="meta-val">É o mais simples — tabelião já guarda e registra</div></div>
+    </div>
+
+    <div class="box bx-az">
+      <div class="bx-t">📖 O que é o Testamento Público?</div>
+      <p>É feito pelo próprio tabelião (ou substituto legal) no Livro de Notas do Cartório. Por isso, a abertura é a mais simples: já existe certidão registrada. O cego <strong>só pode testar nesta forma</strong>. Exige leitura em voz alta pelo tabelião na presença de 2 testemunhas.</p>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Abertura e Cumprimento</div>
+    <div class="steps" id="steps-a1">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Morte do testador:</strong> Ocorre a abertura da sucessão (art. 1784 CC). O testamento já está registrado no Livro de Notas do Cartório — não precisa ser "apresentado".</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Requerimento ao juiz:</strong> Qualquer interessado (herdeiro, legatário, MP) peticiona ao juízo do inventário requerendo a abertura do testamento público e sua homologação. Junta certidão do testamento expedida pelo cartório.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Autuação e distribuição:</strong> O juízo recebe o pedido, autua como procedimento de jurisdição voluntária e distribui ao juiz competente (último domicílio do falecido — art. 48 CPC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Intimação do Ministério Público:</strong> O juiz intima o MP para se manifestar, pois há interesse público na validade das disposições de última vontade (art. 735 CPC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Intimação dos interessados:</strong> O juiz intima todos os herdeiros e legatários para que, no prazo de <em>15 dias</em>, manifestem concordância ou impugnem o testamento.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Sem impugnação → Homologação:</strong> Se todos concordam (ou ficam silentes), o juiz profere sentença de homologação do testamento, determinando seu registro e cumprimento (art. 735, § 2º CPC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Com impugnação → Processo litigioso:</strong> Se houver impugnação (alegação de vício, incapacidade etc.), o procedimento perde o caráter de jurisdição voluntária e converte-se em processo contencioso (ação de nulidade ou anulação).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Registro da sentença:</strong> Após o trânsito em julgado da homologação, o testamento é registrado no Ofício de Registro de Imóveis (se houver imóveis) e no Registro Civil.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Cumprimento das disposições:</strong> As disposições testamentárias são cumpridas no bojo do inventário, sendo o testamenteiro (se nomeado) o responsável pelo seu fiel cumprimento (art. 1976 CC).</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito do testador</div>
+      <div class="doc-item"><span class="di">📋</span>Certidão do testamento (emitida pelo Cartório de Notas)</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos pessoais do requerente (RG, CPF)</div>
+      <div class="doc-item"><span class="di">📍</span>Comprovante do último domicílio do falecido</div>
+      <div class="doc-item"><span class="di">👨‍👩‍👧</span>Qualificação dos herdeiros e legatários</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração (se houver advogado constituído)</div>
+    </div>
+
+    <div class="box bx-am">
+      <div class="bx-t">⚠️ Atenção — Pontos Críticos</div>
+      <ul>
+        <li>O testamento público <strong>não precisa de "abertura"</strong> física — já é público. O procedimento é de <em>homologação</em>.</li>
+        <li>O cego <strong>obrigatoriamente</strong> testa na forma pública (art. 1867 CC).</li>
+        <li>A certidão do Cartório de Notas substitui o original — não há risco de destruição.</li>
+        <li>As 2 testemunhas devem ter estado presentes durante todo o ato de feitura (art. 1864, III, CC).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 02 — TESTAMENTO CERRADO
+═══════════════════════════════════════════ -->
+<div class="acao" id="a2">
+  <div class="acao-header h-roxo">
+    <div class="acao-tipo">Ação 02 · Procedimento Especial de Jurisdição Voluntária</div>
+    <h2>🔒 Abertura e Cumprimento de Testamento Cerrado</h2>
+    <p>O testamento secreto — o juiz abre o lacre em audiência e verifica a autenticidade.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1868-1875 CC · Art. 735 CPC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Jurisdição voluntária (procedimento especial)</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Juízo do inventário (último domicílio do falecido)</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Qualquer interessado ou quem estiver com o testamento</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo</div><div class="meta-val alerta">Imediato após a morte — risco de nulidade por abertura indevida</div></div>
+      <div class="meta-card"><div class="meta-label">🔒 Particularidade</div><div class="meta-val">Lacre intacto é condição de validade (art. 1972 CC)</div></div>
+    </div>
+
+    <div class="box bx-rx">
+      <div class="bx-t">📖 O que é o Testamento Cerrado?</div>
+      <p>Também chamado de <em>testamento secreto ou místico</em>. O testador redige o documento e o entrega ao tabelião dentro de um invólucro lacrado. O tabelião faz o "auto de aprovação" na parte externa, mas <strong>não conhece o conteúdo</strong>. O surdo-mudo só pode testar nesta forma (art. 1873 CC).</p>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Abertura e Cumprimento</div>
+    <div class="steps" id="steps-a2">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Morte do testador:</strong> Quem estiver na posse do testamento cerrado (testamenteiro, familiar, advogado) deve apresentá-lo imediatamente ao juiz, <strong>sem abri-lo</strong>. Abrir sem autorização judicial torna o testamento nulo (art. 1972 CC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Requerimento de abertura:</strong> O portador do testamento peticiona ao juízo requerendo a <em>abertura judicial do testamento cerrado</em>. Apresenta o invólucro lacrado e a certidão de óbito.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Autuação e designação de audiência:</strong> O juiz autua o pedido e designa <em>audiência específica</em> para abertura do testamento, intimando interessados e o MP.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Exame do estado externo em audiência:</strong> Na audiência, o juiz examina o estado externo do invólucro. Se o lacre estiver <strong>intacto</strong>, autoriza a abertura. Se estiver violado, registra e pode declarar a nulidade (art. 1972 CC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Abertura e leitura pública:</strong> O juiz abre o invólucro em audiência e manda ler o testamento em voz alta. Lavra-se <em>auto de abertura</em> com o termo, assinado por todos os presentes.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Verificação do auto de aprovação:</strong> O juiz confronta o auto de aprovação externo (feito pelo tabelião) com o conteúdo interno para verificar autenticidade. Se houver divergência, pode-se arguir nulidade.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Intimação do MP e dos interessados:</strong> Após a leitura, todos são intimados para se manifestar sobre o conteúdo. Prazo: <em>15 dias</em>.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Sem impugnação → Homologação:</strong> O juiz profere sentença homologando o testamento cerrado e determina seu registro e cumprimento no inventário.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Com impugnação → Processo litigioso:</strong> Converte-se em ação de nulidade ou anulação (ver Ações 05 e 06).</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito</div>
+      <div class="doc-item"><span class="di">🔒</span>O invólucro lacrado do testamento (original)</div>
+      <div class="doc-item"><span class="di">📋</span>Certidão do auto de aprovação do tabelião</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos pessoais do apresentante</div>
+      <div class="doc-item"><span class="di">📍</span>Comprovante do último domicílio do falecido</div>
+      <div class="doc-item"><span class="di">👨‍👩‍👧</span>Qualificação dos herdeiros e legatários</div>
+    </div>
+
+    <div class="box bx-rm">
+      <div class="bx-t">⚠️ Atenção — Pontos Críticos</div>
+      <ul>
+        <li><strong>Nunca abrir sem autorização judicial</strong> — isso causa a nulidade do testamento (art. 1972 CC).</li>
+        <li>O testamento cerrado que o testador <em>dilacerar</em> considera-se <strong>revogado</strong> (art. 1972 CC).</li>
+        <li>O surdo-mudo só pode usar esta forma (art. 1873 CC) — deve escrever de próprio punho.</li>
+        <li>O testamento cerrado exige <strong>2 testemunhas</strong> no ato de entrega ao tabelião.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 03 — TESTAMENTO PARTICULAR
+═══════════════════════════════════════════ -->
+<div class="acao" id="a3">
+  <div class="acao-header h-verde">
+    <div class="acao-tipo">Ação 03 · Procedimento Especial — Art. 737 CPC</div>
+    <h2>✍️ Confirmação e Cumprimento de Testamento Particular</h2>
+    <p>O hológrafo — exige confirmação das testemunhas signatárias em juízo.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1876-1880 CC · Art. 737 CPC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Jurisdição voluntária — procedimento especial</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Juízo do inventário (último domicílio do falecido)</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Qualquer interessado que tiver o testamento em mãos</div></div>
+      <div class="meta-card"><div class="meta-label">👥 Testemunhas</div><div class="meta-val alerta">Mínimo 3 testemunhas signatárias (art. 1876 CC)</div></div>
+      <div class="meta-card"><div class="meta-label">🌐 Idioma</div><div class="meta-val">Nacional ou estrangeiro (se testemunhas entenderem)</div></div>
+    </div>
+
+    <div class="box bx-vd">
+      <div class="bx-t">📖 O que é o Testamento Particular?</div>
+      <p>Também chamado de <em>hológrafo</em>. É o testamento feito pelo próprio testador — pode ser manuscrito ou digitado (mecânico), desde que assinado e confirmado por <strong>no mínimo 3 testemunhas</strong>. Por não ter a chancela do tabelião, precisa de <em>confirmação judicial pelas testemunhas</em> após a morte.</p>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Confirmação e Cumprimento</div>
+    <div class="steps" id="steps-a3">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Morte do testador:</strong> Quem tiver o testamento particular em mãos deve apresentá-lo ao juízo imediatamente. O documento deve estar original e com as assinaturas das testemunhas.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Requerimento de confirmação:</strong> Qualquer interessado peticiona ao juízo requerendo a <em>confirmação do testamento particular</em> (art. 737 CPC). Apresenta o testamento original e requer a intimação das testemunhas signatárias.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Publicação do testamento:</strong> O juiz manda publicar o testamento, abrindo prazo para que herdeiros e legatários se manifestem.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Intimação das testemunhas:</strong> O juiz intima todas as testemunhas signatárias para audiência de confirmação. Devem confirmar: (a) que estavam presentes; (b) que o testador estava capaz; (c) que a assinatura é autêntica.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Audiência de confirmação:</strong> As testemunhas depõem em audiência, confirmando a autenticidade e as circunstâncias da assinatura. O juiz pode complementar com perícia grafotécnica se necessário.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Testemunha falecida ou não localizada:</strong> Se uma das testemunhas <em>falecer ou não for encontrada</em>, as demais podem confirmar sozinhas (art. 1878 CC). Se todas falecerem, o juiz analisa as circunstâncias e pode confirmar ou rejeitar.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Intimação do MP:</strong> O MP é intimado para se manifestar sobre a validade formal e material do testamento.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Sem impugnação → Sentença confirmatória:</strong> O juiz profere sentença <em>confirmando</em> o testamento (não homologando — é confirmação). Essa sentença tem efeito constitutivo.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Com impugnação → Processo contencioso:</strong> Converte em ação de nulidade (vícios formais) ou anulação (vícios de consentimento).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">10</div><div class="step-txt"><strong>Cumprimento no inventário:</strong> Com a sentença confirmatória transitada em julgado, as disposições são cumpridas no inventário pelo testamenteiro ou pelo inventariante.</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito</div>
+      <div class="doc-item"><span class="di">✍️</span>Testamento particular original (com assinaturas)</div>
+      <div class="doc-item"><span class="di">👥</span>Dados das 3 testemunhas signatárias (nome, endereço)</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos pessoais do requerente e das testemunhas</div>
+      <div class="doc-item"><span class="di">📍</span>Comprovante do último domicílio do falecido</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração ad judicia se houver advogado</div>
+    </div>
+
+    <div class="box bx-am">
+      <div class="bx-t">⚠️ Atenção — Testamento Particular Excepcional (art. 1879 CC)</div>
+      <ul>
+        <li>Em <strong>situações extraordinárias</strong> (sequestro, calamidade, epidemia), pode ser feito <em>sem testemunhas</em>.</li>
+        <li>Deve ser escrito à próprio punho e justificar a impossibilidade de colher testemunhas.</li>
+        <li>O juiz pode confirmar ouvindo quaisquer outras pessoas que presenciaram as circunstâncias.</li>
+        <li>Essa modalidade é de difícil confirmação — o juiz tem discricionariedade (art. 1879 CC).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 04 — TESTAMENTO ESPECIAL
+═══════════════════════════════════════════ -->
+<div class="acao" id="a4">
+  <div class="acao-header h-teal">
+    <div class="acao-tipo">Ação 04 · Procedimento Especial — Testamentos de Emergência</div>
+    <h2>🚨 Abertura de Testamentos Especiais</h2>
+    <p>Marítimo, aeronáutico e militar — atos provisórios com validade de 90 dias.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1886-1896 CC</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo de Validade</div><div class="meta-val alerta">90 dias após poder testar na forma ordinária</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Juízo do inventário após entrega às autoridades</div></div>
+      <div class="meta-card"><div class="meta-label">✅ Testemunhas</div><div class="meta-val">2 testemunhas (marítimo/aeronáutico)</div></div>
+    </div>
+
+    <div class="box bx-tl">
+      <div class="bx-t">📖 Tipos de Testamentos Especiais</div>
+      <ul>
+        <li>🚢 <strong>Marítimo:</strong> Em viagem em navio (militar ou comercial). Registrado no diário de bordo. Entregue às autoridades do 1º porto nacional (art. 1888 CC).</li>
+        <li>✈️ <strong>Aeronáutico:</strong> Em viagem de aeronave (militar ou comercial). Feito perante o comandante. Entregue no 1º aeroporto nacional (art. 1889 CC).</li>
+        <li>⚔️ <strong>Militar:</strong> Em campanha de guerra. Feito perante oficial (art. 1893 CC).</li>
+        <li>🗣️ <strong>Nuncupativo:</strong> Forma oral, em combate, sem qualquer instrumento escrito (art. 1896 CC) — exceção extrema.</li>
+      </ul>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Abertura (Marítimo/Aeronáutico)</div>
+    <div class="steps" id="steps-a4">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Feitura a bordo:</strong> O testador faz o testamento perante o comandante (aeronáutico) ou registrado no diário de bordo (marítimo), com 2 testemunhas. Segue as regras do testamento público ou cerrado (art. 1888 CC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Entrega às autoridades:</strong> O comandante entrega o testamento às autoridades do <em>primeiro porto ou aeroporto nacional</em> em que parar. As autoridades o encaminham ao juízo competente.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Verificação do prazo de 90 dias:</strong> Se o testador sobreviver ao evento e estiver em local onde possa fazer testamento na forma ordinária, o testamento especial perde a validade após 90 dias. Se falecer antes disso, o testamento é válido.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Morte do testador:</strong> Verificado o óbito dentro do prazo de validade, qualquer interessado requer ao juízo a abertura e cumprimento do testamento especial, nos mesmos moldes do testamento público.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Análise judicial:</strong> O juiz verifica a regularidade formal (qualidade do comandante, presença de testemunhas, registro no diário de bordo) e, se válido, homologa e determina o cumprimento no inventário.</div></div>
+    </div>
+
+    <div class="box bx-rm">
+      <div class="bx-t">⚠️ Atenção — Prazo Fatal de 90 Dias</div>
+      <ul>
+        <li>O testamento especial é <strong>provisório</strong> — caduca automaticamente após 90 dias se o testador puder refazer em forma ordinária.</li>
+        <li>O testamento militar nuncupativo (oral) exige que o testador declare sua vontade a 2 militares e que eles a reduzam a escrito.</li>
+        <li>Se o testador <em>sobreviver</em> ao evento e não renovar o testamento, toda a disposição é ineficaz.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 05 — NULIDADE
+═══════════════════════════════════════════ -->
+<div class="acao" id="a5">
+  <div class="acao-header h-verm">
+    <div class="acao-tipo">Ação 05 · Ação Declaratória de Nulidade — Processo Contencioso</div>
+    <h2>❌ Ação de Nulidade de Testamento</h2>
+    <p>Para vícios insanáveis que tornam o testamento absolutamente nulo desde o início.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 166, 167, 1860, 1863 CC · Arts. 319-334 CPC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Ação declaratória constitutiva negativa</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Vara de Família e Sucessões (ou cível) — último domicílio</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Qualquer interessado (herdeiro, legatário, MP, credor)</div></div>
+      <div class="meta-card"><div class="meta-label">👥 Legitimidade Passiva</div><div class="meta-val">Beneficiários do testamento (herdeiros testamentários e legatários)</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo</div><div class="meta-val destaque">IMPRESCRITÍVEL — nulidade absoluta não prescreve</div></div>
+    </div>
+
+    <div class="box bx-rm">
+      <div class="bx-t">📖 Causas de Nulidade Absoluta do Testamento</div>
+      <ul>
+        <li>❌ Testador absolutamente incapaz (menor de 16 anos — art. 1860, parágrafo único, CC)</li>
+        <li>❌ Testamento conjunto, recíproco ou correspectivo (art. 1863 CC — proibido no Brasil)</li>
+        <li>❌ Descumprimento de formalidade essencial (ex: testamento cerrado sem lacre; testamento público sem tabelião)</li>
+        <li>❌ Disposição em favor de pessoa incapaz de receber (arts. 1801-1802 CC — pessoas proibidas)</li>
+        <li>❌ Objeto ilícito ou impossível na disposição testamentária</li>
+      </ul>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Estrutura da Petição Inicial</div>
+    <div class="steps" id="steps-a5">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Endereçamento:</strong> Petição endereçada ao MM. Juízo da Vara de Família e Sucessões da Comarca do último domicílio do falecido (art. 48 CPC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Qualificação das partes:</strong> Autor (herdeiro prejudicado ou MP) e réus (todos os beneficiários do testamento — herdeiros testamentários e legatários). Todos devem ser citados.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Dos fatos (causa petendi remota):</strong> Narrar a situação concreta: morte do testador, existência do testamento, e o <em>vício específico</em> que acarreta a nulidade (ex: "o testador contava com apenas 14 anos de idade na data do testamento").</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Do direito (causa petendi próxima):</strong> Fundamentar com os artigos do CC. Ex: Art. 1860 CC (capacidade) + Art. 166 CC (nulidade absoluta). Explicar por que o vício é <em>insanável</em> e <em>não se convalida</em>.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Pedido principal:</strong> <em>"Requer a declaração de nulidade absoluta do testamento, com o consequente retorno dos bens à herança legítima"</em> (sucessão legítima). O pedido é declaratório.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Pedido de medida cautelar/tutela provisória:</strong> Se houver risco de dilapidação dos bens, requerer tutela de urgência para suspender o cumprimento do testamento até o julgamento final (art. 300 CPC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Provas:</strong> Indicar todas as provas: documental (testamento + documentos do testador), pericial (análise da data do testamento, perícia grafotécnica), testemunhal.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Valor da causa:</strong> Corresponde ao valor do monte-mor (patrimônio total) da herança ou ao valor das disposições impugnadas.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Citação dos réus e instrução:</strong> Após distribuição, os réus são citados para contestar em 15 dias (art. 335 CPC). Segue o rito ordinário com instrução probatória.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">10</div><div class="step-txt"><strong>Sentença:</strong> Procedente: declara a nulidade — efeito <em>ex tunc</em> (retroativo à data do testamento). O testamento é como se nunca tivesse existido. Abre-se a sucessão legítima.</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito do testador</div>
+      <div class="doc-item"><span class="di">📋</span>Cópia do testamento impugnado</div>
+      <div class="doc-item"><span class="di">📄</span>Prova do vício (certidão de nascimento do testador para provar incapacidade etc.)</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos pessoais do autor</div>
+      <div class="doc-item"><span class="di">👨‍👩‍👧</span>Qualificação de todos os réus (beneficiários)</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração com poderes específicos para ação</div>
+    </div>
+
+    <div class="box bx-am">
+      <div class="bx-t">⚠️ Nulidade × Anulabilidade — Diferença Fundamental</div>
+      <ul>
+        <li><strong>Nulidade:</strong> vício insanável → imprescritível → qualquer interessado pode arguir → efeito ex tunc</li>
+        <li><strong>Anulabilidade:</strong> vício sanável → prescreve em 4 anos → só o interessado pode arguir → efeito ex nunc</li>
+        <li>Ex de nulidade: testamento de menor de 16 anos. Ex de anulabilidade: testamento por coação.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 06 — ANULAÇÃO
+═══════════════════════════════════════════ -->
+<div class="acao" id="a6">
+  <div class="acao-header h-laranja">
+    <div class="acao-tipo">Ação 06 · Ação Constitutiva Negativa — Processo Contencioso</div>
+    <h2>⚠️ Ação de Anulação de Testamento</h2>
+    <p>Para vícios anuláveis — erro, dolo, coação ou incapacidade relativa do testador.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 171, 178, 1860 CC · Arts. 319-334 CPC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Ação constitutiva negativa (desconstitutiva)</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Vara de Família e Sucessões — último domicílio</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Herdeiros necessários e legatários prejudicados</div></div>
+      <div class="meta-card"><div class="meta-label">👥 Legitimidade Passiva</div><div class="meta-val">Beneficiários do testamento</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo</div><div class="meta-val alerta">4 anos a contar da data do conhecimento do vício (art. 178, II, CC)</div></div>
+    </div>
+
+    <div class="box bx-or">
+      <div class="bx-t">📖 Causas de Anulabilidade do Testamento</div>
+      <ul>
+        <li>⚠️ <strong>Erro</strong> — engano do testador sobre a pessoa do beneficiário ou sobre a natureza do ato</li>
+        <li>⚠️ <strong>Dolo</strong> — indução maliciosa do testador a determinada disposição</li>
+        <li>⚠️ <strong>Coação</strong> — pressão física ou moral que vicia a vontade do testador (art. 1861 CC)</li>
+        <li>⚠️ <strong>Incapacidade relativa</strong> — pródigo não interditado, vício de consentimento por doença transitória na data da feitura</li>
+        <li>⚠️ <strong>Falta de testemunha hábil</strong> (art. 228 CC) — ex: testemunha menor de 16 anos</li>
+      </ul>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Estrutura da Petição Inicial</div>
+    <div class="steps" id="steps-a6">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Verificação do prazo decadencial:</strong> Antes de tudo, verificar se os <em>4 anos</em> da data em que o interessado tomou conhecimento do vício ainda não transcorreram. Prazo decadencial — não se interrompe nem suspende (art. 207 CC).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Endereçamento e qualificação:</strong> Peticionar ao Juízo da Vara de Família e Sucessões. Qualificar autor e todos os réus (beneficiários). O MP pode ser ouvido como fiscal da lei.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Dos fatos:</strong> Descrever detalhadamente o vício: como ocorreu a coação, dolo ou erro; quem praticou; quando; de que forma afetou a vontade do testador. Quanto mais detalhado, mais forte a causa de pedir.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Do direito:</strong> Fundamentar no art. 171 CC (anulabilidade) + causa específica (ex: art. 151 CC para coação). Demonstrar que o vício foi <em>determinante</em> para a disposição impugnada.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Pedido principal:</strong> <em>"Requer a anulação da disposição testamentária [descrever qual], declarando-se ineficaz o testamento no todo ou em parte"</em>. Pode ser parcial (só a disposição viciada) ou total.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Pedidos acessórios:</strong> Restituição dos bens eventualmente transferidos + perdas e danos se houve enriquecimento ilícito do beneficiário que praticou o dolo ou a coação.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Tutela provisória:</strong> Requerer suspensão do cumprimento do testamento até o julgamento final (art. 300 CPC), especialmente se houver risco de alienação dos bens.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Instrução e perícia:</strong> A anulação por incapacidade geralmente exige <em>perícia médica</em> retroativa (análise de prontuários, laudos, testemunhos de médicos) para demonstrar o estado mental do testador na data da feitura.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Sentença:</strong> Procedente: anulação com efeito <em>ex nunc</em> (a partir da sentença). Os bens retornam ao espólio e são distribuídos conforme a sucessão legítima ou o restante do testamento válido.</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito</div>
+      <div class="doc-item"><span class="di">📋</span>Cópia do testamento impugnado</div>
+      <div class="doc-item"><span class="di">🏥</span>Prontuários médicos, laudos psiquiátricos (se incapacidade)</div>
+      <div class="doc-item"><span class="di">📄</span>Provas do dolo ou coação (e-mails, gravações, testemunhas)</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos do autor</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração com poderes específicos</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 07 — REDUÇÃO
+═══════════════════════════════════════════ -->
+<div class="acao" id="a7">
+  <div class="acao-header h-amber">
+    <div class="acao-tipo">Ação 07 · Ação Constitutiva — Arts. 1966-1968 CC</div>
+    <h2>✂️ Ação de Redução de Disposições Testamentárias</h2>
+    <p>Quando o testamento ultrapassa a parte disponível e invade a legítima dos herdeiros necessários.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1846-1850 e 1966-1968 CC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Ação constitutiva de redução de disposição</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Vara de Família e Sucessões — último domicílio</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Herdeiros necessários (descendentes, ascendentes, cônjuge)</div></div>
+      <div class="meta-card"><div class="meta-label">👥 Legitimidade Passiva</div><div class="meta-val">Herdeiros testamentários e legatários beneficiados</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo</div><div class="meta-val">10 anos (prescricional — art. 205 CC)</div></div>
+    </div>
+
+    <div class="box bx-am">
+      <div class="bx-t">📖 O que é a Legítima e Quando Reduzir?</div>
+      <p>A <strong>legítima</strong> corresponde a <em>50% do patrimônio líquido</em> do falecido e é protegida para os herdeiros necessários (art. 1846 CC). O testador só pode dispor livremente dos outros 50% (parte disponível). Se o testamento ultrapassar essa parte disponível, os herdeiros necessários têm direito à redução.</p>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Redução de Disposições</div>
+    <div class="steps" id="steps-a7">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Cálculo do acervo hereditário:</strong> Levantar todo o patrimônio líquido do falecido (bens - dívidas). A legítima = 50% desse valor. A parte disponível = os outros 50%.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Identificação do excesso:</strong> Verificar se as disposições testamentárias (somas dos legados + heranças testamentárias) ultrapassam a parte disponível. Se ultrapassarem, há violação da legítima e cabe redução.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Ordem da redução (art. 1966 CC):</strong> Primeiro reduzem-se as disposições dos <em>herdeiros testamentários</em>; somente se ainda insuficiente, reduzem-se os <em>legados</em>. O testador pode estabelecer ordem diferente.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Petição inicial:</strong> Endereçar ao Juízo de Sucessões. Qualificar partes. Narrar os fatos: abrir o testamento, calcular o acervo e demonstrar matematicamente o excesso que viola a legítima.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Pedido de redução:</strong> Pedir a redução proporcional das disposições testamentárias até os limites da parte disponível, preservando a legítima intacta. Pode ser parcial (só o excesso).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Regra especial dos imóveis (art. 1968 CC):</strong> Se o excesso superar <em>¼ do valor do prédio</em>, o bem retorna à herança e o legatário recebe apenas o valor em dinheiro correspondente à parte disponível. Se não superar ¼, o legatário fica com o imóvel e paga em dinheiro a diferença.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Instrução:</strong> Geralmente requer perícia de avaliação de bens para fixar o valor exato do acervo e o montante da legítima. Prova pericial é fundamental.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Sentença:</strong> O juiz decreta a redução na medida do excesso, determinando ao legatário ou herdeiro testamentário que devolva os bens excedentes ao espólio.</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito</div>
+      <div class="doc-item"><span class="di">📋</span>Cópia do testamento</div>
+      <div class="doc-item"><span class="di">🏠</span>Matrículas de imóveis e documentos de bens</div>
+      <div class="doc-item"><span class="di">💰</span>Balanço patrimonial / declaração de IR do falecido</div>
+      <div class="doc-item"><span class="di">📄</span>Prova da qualidade de herdeiro necessário (cert. nascimento)</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 08 — EXCLUSÃO POR INDIGNIDADE
+═══════════════════════════════════════════ -->
+<div class="acao" id="a8">
+  <div class="acao-header h-rosa">
+    <div class="acao-tipo">Ação 08 · Ação Constitutiva — Art. 1814-1818 CC</div>
+    <h2>🚫 Ação de Exclusão por Indignidade</h2>
+    <p>Afasta o herdeiro ou legatário que praticou ato grave contra o testador ou sua família.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1814-1818 CC · Art. 550 CPC (por analogia)</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Ação constitutiva desconstitutiva (personalíssima)</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Vara de Família e Sucessões — último domicílio</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Qualquer herdeiro, legatário ou interessado na sucessão</div></div>
+      <div class="meta-card"><div class="meta-label">👥 Legitimidade Passiva</div><div class="meta-val">O indigno (herdeiro ou legatário a ser excluído)</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo</div><div class="meta-val alerta">4 anos a contar da abertura da sucessão (art. 1815 CC)</div></div>
+    </div>
+
+    <div class="box bx-rm">
+      <div class="bx-t">📖 Causas de Exclusão por Indignidade (art. 1814 CC)</div>
+      <ul>
+        <li>🔪 <strong>Homicídio doloso:</strong> quem houver sido autor, coautor ou partícipe de homicídio doloso contra o autor da herança, seu cônjuge, companheiro, ascendente ou descendente.</li>
+        <li>📝 <strong>Crime contra a honra:</strong> que houver acusado caluniosamente em juízo o autor da herança ou incorrer em crime contra sua honra.</li>
+        <li>🔒 <strong>Impedimento ao testamento:</strong> que, por violência ou meios fraudulentos, inibir ou obstacular o autor da herança de dispor livremente de seus bens.</li>
+      </ul>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Ação de Exclusão por Indignidade</div>
+    <div class="steps" id="steps-a8">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Verificação do prazo:</strong> Confirmar que os <em>4 anos</em> da abertura da sucessão (morte do testador) não transcorreram. Prazo decadencial — não se suspende nem interrompe.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Verificação do perdão:</strong> Antes de ingressar, verificar se o testador <em>perdoou</em> expressamente o indigno no testamento (art. 1818 CC). Se houver perdão expresso, a ação não prospera. O testamento posterior com benesses ao indigno indica perdão implícito.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Petição inicial:</strong> Endereçar ao Juízo de Família e Sucessões. Qualificar o autor (herdeiro/interessado) e o réu (indigno). O MP pode atuar como fiscal da ordem jurídica.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Dos fatos:</strong> Descrever detalhadamente o ato praticado pelo indigno: crime, data, circunstâncias. Juntar, se possível, sentença penal condenatória (faz prova plena do ato).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Do direito:</strong> Fundamentar no art. 1814 CC (causas de indignidade) + art. 1815 CC (ação). Demonstrar que o réu enquadra-se em uma das hipóteses legais.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Pedido:</strong> <em>"Requer a exclusão do réu da sucessão por indignidade, com o consequente afastamento de todos os direitos hereditários sobre o espólio"</em>. Os bens do indigno retornam ao espólio como se ele <em>não existisse</em>.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Efeitos da exclusão:</strong> O indigno é excluído como se <em>pré-morto</em> fosse. Seus descendentes herdam em seu lugar (direito de representação — art. 1816 CC). O indigno não pode usufruir dos bens, mas seus herdeiros sim.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Instrução:</strong> Provas documentais (sentença penal, BO, laudos), testemunhal e, se necessário, pericial. A condenação penal transitada em julgado vincula o juízo cível quanto à autoria e materialidade.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Sentença:</strong> Procedente: exclui o réu da sucessão com efeitos retroativos à abertura da sucessão. O indigno deve restituir os bens já recebidos com frutos (art. 1817 CC).</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito do testador</div>
+      <div class="doc-item"><span class="di">⚖️</span>Sentença penal condenatória (se houver)</div>
+      <div class="doc-item"><span class="di">📋</span>Cópia do testamento (para verificar perdão)</div>
+      <div class="doc-item"><span class="di">📄</span>Boletim de Ocorrência e inquérito policial</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos pessoais do autor e do réu</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração com poderes específicos</div>
+    </div>
+
+    <div class="box bx-vd">
+      <div class="bx-t">💡 Indignidade × Deserdação</div>
+      <ul>
+        <li><strong>Indignidade:</strong> não precisa de testamento; qualquer interessado move a ação; causas no art. 1814 CC.</li>
+        <li><strong>Deserdação:</strong> somente pelo testador, no próprio testamento, com causa expressa; causas nos arts. 1961-1963 CC.</li>
+        <li>Ambas têm causas parcialmente sobrepostas, mas são institutos distintos!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 09 — PETIÇÃO DE HERANÇA
+═══════════════════════════════════════════ -->
+<div class="acao" id="a9">
+  <div class="acao-header h-indigo">
+    <div class="acao-tipo">Ação 09 · Ação Real — Art. 1824-1828 CC</div>
+    <h2>💰 Ação de Petição de Herança</h2>
+    <p>O herdeiro preterido reivindica seu quinhão da herança indevidamente excluído.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1824-1828 CC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Ação real (de estado e patrimonial)</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Vara de Família e Sucessões — último domicílio</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimidade Ativa</div><div class="meta-val">Herdeiro preterido (não chamado à sucessão)</div></div>
+      <div class="meta-card"><div class="meta-label">👥 Legitimidade Passiva</div><div class="meta-val">Quem detém a posse da herança (herdeiro aparente)</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo</div><div class="meta-val">10 anos (art. 205 CC) — prescricional</div></div>
+    </div>
+
+    <div class="box bx-rx">
+      <div class="bx-t">📖 Quando cabe a Petição de Herança?</div>
+      <p>Quando um herdeiro — seja legítimo ou testamentário — foi <em>preterido</em> (não chamado ou excluído indevidamente) e outra pessoa recebeu os bens. É muito comum quando: (1) filho não reconhecido descobre a paternidade após o inventário; (2) herdeiro testamentário ignorado no cumprimento do testamento.</p>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Petição de Herança</div>
+    <div class="steps" id="steps-a9">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Reconhecimento da qualidade de herdeiro:</strong> Antes da petição de herança, pode ser necessária ação de reconhecimento de paternidade/maternidade ou ação declaratória de qualidade de herdeiro — muitas vezes cumulada na mesma ação.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Identificação dos bens e do possuidor:</strong> Levantar quais bens da herança estão em posse do réu (herdeiro aparente) e qual é o quinhão ao qual o autor tem direito.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Petição inicial:</strong> Endereçar ao Juízo de Família e Sucessões. Qualificar autor e réu. Cumular, se necessário, o pedido de reconhecimento de qualidade de herdeiro com o de restituição dos bens.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Dos fatos:</strong> Demonstrar: (a) a qualidade de herdeiro do autor; (b) que foi preterido da sucessão; (c) que o réu possui indevidamente os bens que pertencem ao autor.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Do direito:</strong> Fundamentar nos arts. 1824 CC (direito à petição) + 1827 CC (responsabilidade do herdeiro aparente). O herdeiro de boa-fé responde pelos bens que ainda existem; o de má-fé responde por todos, mais frutos e benfeitorias.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Pedido:</strong> (a) Reconhecimento da qualidade de herdeiro; (b) restituição do quinhão hereditário em espécie ou equivalente em dinheiro; (c) restituição dos frutos colhidos; (d) indenização se houve má-fé.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Tutela de urgência:</strong> Se houver risco de alienação dos bens, requerer medida cautelar de indisponibilidade (art. 301 CPC) dos bens objeto da herança.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Instrução:</strong> Prova da qualidade de herdeiro (certidões, DNA, testamento) + prova da posse dos bens pelo réu (registros, transferências). Perícia avaliatória dos bens para liquidação.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Sentença:</strong> Reconhece a qualidade de herdeiro e condena o réu à restituição dos bens (ou equivalente). Se o inventário já foi encerrado, determina a sobrepartilha.</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito do testador</div>
+      <div class="doc-item"><span class="di">👶</span>Certidão de nascimento ou exame de DNA</div>
+      <div class="doc-item"><span class="di">📋</span>Cópia do testamento e do inventário (se houver)</div>
+      <div class="doc-item"><span class="di">🏠</span>Matrícula dos bens em posse do réu</div>
+      <div class="doc-item"><span class="di">🪪</span>Documentos pessoais do autor</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração com poderes específicos</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 10 — INVENTÁRIO JUDICIAL
+═══════════════════════════════════════════ -->
+<div class="acao" id="a10">
+  <div class="acao-header h-slate">
+    <div class="acao-tipo">Ação 10 · Procedimento Especial — Arts. 610-673 CPC</div>
+    <h2>🏛️ Inventário Testamentário Judicial</h2>
+    <p>O procedimento central para partilha dos bens quando há testamento e exige intervenção judicial.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 610-673 CPC · Arts. 1784-1802 CC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Procedimento especial de jurisdição voluntária</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Último domicílio do falecido (art. 48 CPC)</div></div>
+      <div class="meta-card"><div class="meta-label">👤 Legitimados para abrir</div><div class="meta-val">Art. 616 CPC: cônjuge, herdeiro, legatário, MP, tabelião</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Prazo de Abertura</div><div class="meta-val alerta">60 dias da morte; encerramento em 12 meses (art. 611)</div></div>
+      <div class="meta-card"><div class="meta-label">⚠️ Quando é obrigatório</div><div class="meta-val">Herdeiro incapaz, litígio entre herdeiros ou testamento não homologado</div></div>
+    </div>
+
+    <div class="box bx-az">
+      <div class="bx-t">📖 Quando o Inventário É Judicial com Testamento?</div>
+      <ul>
+        <li>Quando houver <strong>herdeiro incapaz</strong> (menor, interditado) — art. 610, § 1º CPC</li>
+        <li>Quando houver <strong>litígio</strong> entre herdeiros sobre as disposições testamentárias</li>
+        <li>Quando o testamento <strong>ainda não foi homologado</strong> judicialmente</li>
+        <li>Quando as partes simplesmente <strong>optarem</strong> pelo inventário judicial</li>
+      </ul>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Inventário Judicial com Testamento</div>
+    <div class="steps" id="steps-a10">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Abertura do inventário (dentro de 60 dias):</strong> Qualquer legitimado do art. 616 CPC peticiona ao juízo requerendo a abertura do inventário. Apresenta certidão de óbito, testamento (ou certidão) e relação dos herdeiros.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Nomeação do inventariante:</strong> O juiz nomeia o inventariante (preferencialmente o testamenteiro, se nomeado — art. 1982 CC). O inventariante presta compromisso (art. 617 CPC) e passa a administrar o espólio.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Primeiras declarações (art. 620 CPC):</strong> O inventariante apresenta as <em>primeiras declarações</em> em 20 dias: qualificação do falecido, herdeiros, bens, dívidas e disposições do testamento. É a peça mais importante do inventário.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Abertura e homologação do testamento:</strong> Se o testamento ainda não foi homologado, o juiz procede à abertura (cerrado), confirmação (particular) ou simples juntada (público) e homologa o testamento nos próprios autos do inventário.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Citação dos herdeiros, MP e Fazenda Pública:</strong> Todos são citados. O MP intervém obrigatoriamente se houver incapaz. A Fazenda é intimada para cobrar o ITCMD (imposto sobre transmissão causa mortis).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Impugnações às primeiras declarações:</strong> Herdeiros, legatários e credores podem impugnar o testamento ou as declarações. O juiz decide as questões ou remete ao contencioso (ação autônoma).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Avaliação dos bens (art. 630 CPC):</strong> Oficial de justiça avaliador ou perito designado avalia os bens do espólio. O ITCMD incide sobre o valor venal dos bens na data do óbito.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Últimas declarações (art. 642 CPC):</strong> O inventariante apresenta as últimas declarações, corrigindo ou complementando as primeiras. Último prazo para incluir bens omitidos.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Pagamento do ITCMD:</strong> Calculado sobre o valor dos bens, pago antes da homologação da partilha. Cada estado tem sua legislação e alíquota (geralmente 4% a 8%).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">10</div><div class="step-txt"><strong>Partilha testamentária:</strong> O juiz determina a divisão conforme o testamento, respeitando a legítima dos herdeiros necessários e as disposições testamentárias. Herdeiros podem apresentar esboço de partilha amigável.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">11</div><div class="step-txt"><strong>Pagamento das dívidas:</strong> Antes de distribuir os bens, pagam-se as dívidas do falecido com o ativo do espólio. O passivo reduz o montante disponível.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">12</div><div class="step-txt"><strong>Sentença de homologação da partilha (art. 651 CPC):</strong> O juiz homologa a partilha por sentença. Cada herdeiro recebe seu quinhão. O formal de partilha é o título hábil para o registro dos imóveis no cartório.</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito</div>
+      <div class="doc-item"><span class="di">📋</span>Testamento (original ou certidão)</div>
+      <div class="doc-item"><span class="di">🏠</span>Matrículas de imóveis e documentos de veículos</div>
+      <div class="doc-item"><span class="di">🏦</span>Extratos bancários e investimentos</div>
+      <div class="doc-item"><span class="di">👨‍👩‍👧</span>Documentos dos herdeiros e legatários</div>
+      <div class="doc-item"><span class="di">📄</span>Certidão de dívidas e passivos</div>
+      <div class="doc-item"><span class="di">💰</span>DIRPF do falecido (últimos 5 anos)</div>
+      <div class="doc-item"><span class="di">📁</span>Procuração com poderes para inventário</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 11 — INVENTÁRIO EXTRAJUDICIAL
+═══════════════════════════════════════════ -->
+<div class="acao" id="a11">
+  <div class="acao-header h-verde">
+    <div class="acao-tipo">Ação 11 · Escritura Pública — Art. 610, § 1º CPC + Res. 35/2007 CNJ</div>
+    <h2>📋 Inventário Testamentário Extrajudicial</h2>
+    <p>Inventário em cartório de notas — mais rápido, quando o testamento já foi homologado judicialmente.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Art. 610, § 1º CPC · Resolução CNJ 35/2007</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Escritura pública — procedimento extrajudicial</div></div>
+      <div class="meta-card"><div class="meta-label">🏛️ Competência</div><div class="meta-val">Qualquer Cartório de Notas do Brasil (livre escolha)</div></div>
+      <div class="meta-card"><div class="meta-label">✅ Requisito testamento</div><div class="meta-val destaque">Testamento deve ser previamente homologado pelo juiz</div></div>
+      <div class="meta-card"><div class="meta-label">✅ Outros requisitos</div><div class="meta-val">Todos os herdeiros capazes e concordantes + advogado</div></div>
+      <div class="meta-card"><div class="meta-label">⏱️ Vantagem</div><div class="meta-val destaque">Muito mais rápido que o judicial (semanas vs. anos)</div></div>
+    </div>
+
+    <div class="box bx-vd">
+      <div class="bx-t">✅ Quando É Possível o Inventário Extrajudicial com Testamento?</div>
+      <ul>
+        <li>✅ Todos os herdeiros são <strong>maiores e capazes</strong></li>
+        <li>✅ Todos <strong>concordam</strong> com a partilha</li>
+        <li>✅ O testamento foi <strong>previamente homologado pelo juiz</strong> (após 2013 — art. 8º Res. CNJ 35)</li>
+        <li>✅ Presença de <strong>advogado</strong> (pode ser um para todos)</li>
+        <li>❌ Impossível com herdeiro incapaz ou testamento não homologado</li>
+      </ul>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Inventário Extrajudicial com Testamento</div>
+    <div class="steps" id="steps-a11">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Homologação judicial prévia do testamento:</strong> Antes de tudo, o testamento deve ser homologado pelo juiz (procedimento judicial — ver Ações 01/02/03). Somente após a sentença de homologação transitada em julgado é possível o inventário extrajudicial.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Escolha do Cartório de Notas:</strong> Qualquer cartório de notas do território nacional (livre escolha — art. 1º Res. CNJ 35/2007). Não precisa ser no domicílio do falecido.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Contratação de advogado:</strong> Obrigatória a presença de advogado habilitado (OAB) que assina a escritura junto com as partes (art. 8º Res. CNJ 35). Pode ser um único advogado para todos os herdeiros, se não houver conflito de interesses.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Reunião dos documentos:</strong> Certidão de óbito, sentença de homologação do testamento, documentos dos bens (matrículas, CRVs), CPF e RG de todos os herdeiros, certidões negativas de débitos fiscais do falecido.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Cálculo e recolhimento do ITCMD:</strong> O advogado e as partes calculam o ITCMD sobre o valor dos bens. O imposto deve ser pago antes ou junto com a lavratura da escritura. Cada estado tem prazo e alíquota próprios.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Lavratura da Escritura Pública de Inventário e Partilha:</strong> O tabelião lavra a escritura contendo: qualificação do falecido e de todos os herdeiros, descrição dos bens, disposições do testamento homologado, partilha dos bens conforme o testamento e a legítima.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">7</div><div class="step-txt"><strong>Assinaturas:</strong> Todos os herdeiros assinam a escritura. O advogado assina. O tabelião assina e autentica. Não é necessária a assinatura do juiz (é ato extrajudicial).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">8</div><div class="step-txt"><strong>Registro dos imóveis:</strong> Com a escritura pública, cada herdeiro leva ao Cartório de Registro de Imóveis para registrar a transferência dos imóveis em seu nome. Para veículos: DETRAN. Para valores mobiliários: B3 ou corretora.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">9</div><div class="step-txt"><strong>Cumprimento das disposições testamentárias:</strong> O testamenteiro (se nomeado) fiscaliza e atesta o cumprimento das disposições testamentárias perante o Juízo competente, para prestação final de contas (art. 1985 CC).</div></div>
+    </div>
+
+    <div class="steps-title">📂 DOCUMENTOS NECESSÁRIOS</div>
+    <div class="docs-grid">
+      <div class="doc-item"><span class="di">⚖️</span>Sentença judicial de homologação do testamento</div>
+      <div class="doc-item"><span class="di">📜</span>Certidão de Óbito</div>
+      <div class="doc-item"><span class="di">🏠</span>Matrículas de imóveis atualizadas</div>
+      <div class="doc-item"><span class="di">🚗</span>CRV dos veículos</div>
+      <div class="doc-item"><span class="di">🏦</span>Extratos bancários e investimentos</div>
+      <div class="doc-item"><span class="di">💰</span>Comprovante de pagamento do ITCMD</div>
+      <div class="doc-item"><span class="di">🪪</span>RG, CPF e cert. de casamento de todos os herdeiros</div>
+      <div class="doc-item"><span class="di">⚖️</span>OAB e procuração do advogado</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AÇÃO 12 — CODICILO
+═══════════════════════════════════════════ -->
+<div class="acao" id="a12">
+  <div class="acao-header h-teal">
+    <div class="acao-tipo">Ação 12 · Procedimento Complementar — Arts. 1881-1885 CC</div>
+    <h2>📝 Procedimento do Codicilo</h2>
+    <p>Declaração de última vontade simplificada, para disposições de pequena expressão.</p>
+  </div>
+  <div class="acao-body">
+    <div class="meta-grid">
+      <div class="meta-card"><div class="meta-label">📋 Base Legal</div><div class="meta-val destaque">Arts. 1881-1885 CC</div></div>
+      <div class="meta-card"><div class="meta-label">⚖️ Natureza</div><div class="meta-val">Ato de última vontade (não é testamento)</div></div>
+      <div class="meta-card"><div class="meta-label">📋 Forma</div><div class="meta-val">Escrito de próprio punho e assinado</div></div>
+      <div class="meta-card"><div class="meta-label">⚠️ Limitação</div><div class="meta-val alerta">Só pode dispor de bens de pequena expressão</div></div>
+      <div class="meta-card"><div class="meta-label">✅ Sem testemunhas</div><div class="meta-val">Não exige testemunhas (diferente do testamento)</div></div>
+      <div class="meta-card"><div class="meta-label">🔗 Relação testamento</div><div class="meta-val">Pode complementar ou ser independente do testamento</div></div>
+    </div>
+
+    <div class="box bx-tl">
+      <div class="bx-t">📖 O que é e para que serve o Codicilo?</div>
+      <p>O codicilo é uma declaração escrita de próprio punho e assinada pelo disponente para dispor sobre <em>bens de pequena expressão</em>, nomeação e substituição de testamenteiro, enterro e sufrágio. É menos formal que o testamento — não precisa de tabelião nem testemunhas. Mas tem objeto limitado!</p>
+    </div>
+
+    <div class="steps-title">📌 PASSO A PASSO — Procedimento do Codicilo</div>
+    <div class="steps" id="steps-a12">
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">1</div><div class="step-txt"><strong>Verificação da aptidão para codicilo:</strong> Confirmar que a disposição é de <em>bem de pequena expressão</em> (não há valor legal fixo — análise casuística) ou que se trata de nomeação de testamenteiro, instrução de enterro ou sufrágio.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">2</div><div class="step-txt"><strong>Morte do disponente:</strong> Quem estiver na posse do codicilo apresenta ao juízo do inventário. O codicilo pode ser apresentado junto com o testamento (se houver) ou de forma autônoma.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">3</div><div class="step-txt"><strong>Apresentação ao juízo:</strong> O codicilo é apresentado ao juiz do inventário junto com a certidão de óbito. Por ter forma similar ao testamento particular, aplica-se o mesmo procedimento de confirmação (art. 737 CPC, por analogia).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">4</div><div class="step-txt"><strong>Análise do objeto:</strong> O juiz verifica se o objeto do codicilo está dentro dos limites legais. Se ultrapassar (bem de grande valor), o codicilo é ineficaz para aquela disposição — converte-se em testamento irregular (sem validade).</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">5</div><div class="step-txt"><strong>Relação com testamento preexistente:</strong> Se houver testamento e codicilo posterior, o codicilo pode modificar disposições secundárias do testamento (art. 1884 CC), mas não pode revogar o testamento em si — para isso exige novo testamento.</div></div>
+      <div class="step" onclick="toggleStep(this)"><div class="step-num">6</div><div class="step-txt"><strong>Cumprimento:</strong> As disposições do codicilo são cumpridas no inventário juntamente com as do testamento (ou como única disposição de última vontade, se não houver testamento).</div></div>
+    </div>
+
+    <div class="box bx-am">
+      <div class="bx-t">⚠️ Codicilo × Testamento — Diferenças Essenciais</div>
+      <ul>
+        <li><strong>Codicilo:</strong> escrito à mão + assinado (sem testemunhas); só para bens de pequena expressão + enterro + testamenteiro.</li>
+        <li><strong>Testamento:</strong> exige formalidades (tabelião, testemunhas ou confirmação judicial); pode dispor de qualquer bem.</li>
+        <li>Codicilo não revoga testamento — apenas o complementa.</li>
+        <li>Testamento posterior revoga codicilo anterior que disponha sobre o mesmo objeto.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ QUADRO RESUMO ═══ -->
+<div id="resumo">
+  <h2 class="sec">⚡ Quadro Resumo — Todas as Ações</h2>
+  <div class="tbl-wrap" style="overflow-x:auto;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--border);margin:16px 0">
+    <table style="width:100%;border-collapse:collapse;font-size:.8rem;background:var(--bg2)">
+      <thead style="background:linear-gradient(135deg,#0D1B2A,#1E40AF)">
+        <tr>
+          <th style="padding:11px 13px;color:#fff;text-align:left">Nº</th>
+          <th style="padding:11px 13px;color:#fff;text-align:left">Ação</th>
+          <th style="padding:11px 13px;color:#fff;text-align:left">Base Legal</th>
+          <th style="padding:11px 13px;color:#fff;text-align:left">Prazo</th>
+          <th style="padding:11px 13px;color:#fff;text-align:left">Natureza</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">01</td><td style="padding:9px 13px;color:var(--t2)">Abertura Test. Público</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1864-1867 CC; 735 CPC</td><td style="padding:9px 13px;color:var(--t2)">60 dias (inventário)</td><td style="padding:9px 13px;color:var(--t2)">Jurisdição voluntária</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">02</td><td style="padding:9px 13px;color:var(--t2)">Abertura Test. Cerrado</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1868-1875 CC; 735 CPC</td><td style="padding:9px 13px;color:var(--t2)">Imediato após morte</td><td style="padding:9px 13px;color:var(--t2)">Jurisdição voluntária</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">03</td><td style="padding:9px 13px;color:var(--t2)">Confirmação Test. Particular</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1876-1880 CC; 737 CPC</td><td style="padding:9px 13px;color:var(--t2)">Imediato após morte</td><td style="padding:9px 13px;color:var(--t2)">Jurisdição voluntária</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">04</td><td style="padding:9px 13px;color:var(--t2)">Abertura Test. Especial</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1886-1896 CC</td><td style="padding:9px 13px;color:var(--verm2);font-weight:600">90 dias de validade</td><td style="padding:9px 13px;color:var(--t2)">Jurisdição voluntária</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">05</td><td style="padding:9px 13px;color:var(--t2)">Nulidade de Testamento</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 166, 1860 CC</td><td style="padding:9px 13px;color:var(--verde2);font-weight:600">Imprescritível</td><td style="padding:9px 13px;color:var(--t2)">Declaratória — contenciosa</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">06</td><td style="padding:9px 13px;color:var(--t2)">Anulação de Testamento</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 171, 178, 1860 CC</td><td style="padding:9px 13px;color:var(--verm2);font-weight:600">4 anos (decadencial)</td><td style="padding:9px 13px;color:var(--t2)">Constitutiva negativa</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">07</td><td style="padding:9px 13px;color:var(--t2)">Redução de Disposições</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1846, 1966-1968 CC</td><td style="padding:9px 13px;color:var(--t2)">10 anos (prescricional)</td><td style="padding:9px 13px;color:var(--t2)">Constitutiva</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">08</td><td style="padding:9px 13px;color:var(--t2)">Exclusão por Indignidade</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1814-1818 CC</td><td style="padding:9px 13px;color:var(--verm2);font-weight:600">4 anos da abertura (decad.)</td><td style="padding:9px 13px;color:var(--t2)">Constitutiva desconstitutiva</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">09</td><td style="padding:9px 13px;color:var(--t2)">Petição de Herança</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 1824-1828 CC</td><td style="padding:9px 13px;color:var(--t2)">10 anos (prescricional)</td><td style="padding:9px 13px;color:var(--t2)">Real — pessoal e patrimonial</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:var(--bg3)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">10</td><td style="padding:9px 13px;color:var(--t2)">Inventário Judicial</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Arts. 610-673 CPC</td><td style="padding:9px 13px;color:var(--verm2);font-weight:600">60 dias da morte (abertura)</td><td style="padding:9px 13px;color:var(--t2)">Procedimento especial</td></tr>
+        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 13px;color:var(--azul2);font-weight:700">11</td><td style="padding:9px 13px;color:var(--t2)">Inventário Extrajudicial</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem">Art. 610 CPC; Res. CNJ 35/07</td><td style="padding:9px 13px;color:var(--t2)">Após homologação judicial</td><td style="padding:9px 13px;color:var(--t2)">Escritura pública</td></tr>
+        <tr><td style="padding:9px 13px;color:var(--azul2);font-weight:700;background:var(--bg3)">12</td><td style="padding:9px 13px;color:var(--t2);background:var(--bg3)">Codicilo</td><td style="padding:9px 13px;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:.72rem;background:var(--bg3)">Arts. 1881-1885 CC</td><td style="padding:9px 13px;color:var(--t2);background:var(--bg3)">Apresentar no inventário</td><td style="padding:9px 13px;color:var(--t2);background:var(--bg3)">Complementar ao testamento</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="sep"></div>
+<p style="text-align:center;font-size:.73rem;color:var(--t3);padding:16px 0">
+  ⚖️ Material criado por <strong style="color:var(--azul2)">Andrews Curriel</strong> · Direito das Sucessões · baseado nas aulas da Prof.ª Dr.ª Denise Schmitt Siqueira Garcia · CC/2002 e CPC/2015
+</p>
+
+  </div>
+</main>
+</div>
+
+<button class="scrtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// TEMA
+function toggleTheme(){
+  const h=document.documentElement;
+  const d=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',d?'light':'dark');
+  document.getElementById('btnT').textContent=d?'🌙 Noite':'☀️ Dia';
+  localStorage.setItem('theme',d?'light':'dark');
+}
+(()=>{
+  const t=localStorage.getItem('theme');
+  if(t){document.documentElement.setAttribute('data-theme',t);if(t==='dark')document.getElementById('btnT').textContent='☀️ Dia';}
+})();
+
+// NAVEGAÇÃO
+function ir(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.sb-a').forEach(a=>a.classList.remove('on'));
+  const m=document.querySelector(`.sb-a[onclick*="${id}"]`);
+  if(m)m.classList.add('on');
+}
+
+// PROGRESSO DA PÁGINA
+window.addEventListener('scroll',()=>{
+  const t=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('pgbar').style.width=(t/h*100)+'%';
+});
+
+// SCROLL SPY
+const ids=['a1','a2','a3','a4','a5','a6','a7','a8','a9','a10','a11','a12','resumo'];
+const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.sb-a').forEach(a=>a.classList.remove('on'));const m=document.querySelector(`.sb-a[onclick*="${e.target.id}"]`);if(m)m.classList.add('on');}});},{threshold:.15});
+ids.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
+
+// CHECKLIST — PASSO A PASSO
+let total=0,done=0;
+function toggleStep(el){
+  el.classList.toggle('done');
+  updateProgress();
+}
+function updateProgress(){
+  const all=document.querySelectorAll('.step');
+  const dn=document.querySelectorAll('.step.done');
+  total=all.length;done=dn.length;
+  const pct=total>0?Math.round(done/total*100):0;
+  document.getElementById('prog-int').style.width=pct+'%';
+  document.getElementById('prog-count').textContent=`${done} / ${total}`;
+}
+window.addEventListener('load',updateProgress);
+</script>
+</body>
+</html>
